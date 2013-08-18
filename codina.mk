@@ -8,15 +8,10 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
-    audio_policy.montblanc \
     lights.montblanc \
     com.android.future.usb.accessory \
     SamsungServiceMode \
     Torch
-
-# alsa-lib
-PRODUCT_PACKAGES += \
-    libasound
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

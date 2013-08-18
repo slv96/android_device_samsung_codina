@@ -10,7 +10,6 @@ TARGET_NO_RADIOIMAGE := true
 # Platform 
 TARGET_BOARD_PLATFORM := montblanc
 BOARD_USES_STE_HARDWARE := true
-TARGET_SOC := u8500
 COMMON_GLOBAL_CFLAGS += -DSTE_HARDWARE -DSAMSUNG_STE -DSTE_SAMSUNG_HARDWARE
 
 # Architecture
@@ -62,13 +61,14 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/codina/shbootimg.mk
 
 # Graphics
 BOARD_EGL_CFG := device/samsung/codina/configs/egl.cfg
-BOARD_EGL_NEEDS_LEGACY_FB := true
+#BOARD_EGL_NEEDS_LEGACY_FB := true
 USE_OPENGL_RENDERER := true
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/codina/bt/include
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/codina/bt/vnd_u8500.txt
 
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd
@@ -90,7 +90,10 @@ BOARD_LEGACY_NL80211_STA_EVENTS  := true
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
-COMMON_GLOBAL_CFLAGS += -DSTE_AUDIO
+BOARD_HAS_MR0_STE_AUDIO := true
+COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB
+MR0_AUDIO_BLOB := true
+BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER := true
 
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/musb-ux500.0/musb-hdrc/gadget/lun%d/file"
@@ -114,6 +117,7 @@ ENABLE_WEBGL := true
 
 # RIL
 BOARD_USES_LIBSECRIL_STUB := true
+BOARD_RIL_CLASS := ../../../device/samsung/codina/ril/
 
 # Camera
 BOARD_USES_PROPRIETARY_LIBCAMERA := true

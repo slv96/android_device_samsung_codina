@@ -105,6 +105,7 @@ lib/drm/libdrmwvmplugin.so
 lib/egl/libEGL_mali.so
 lib/egl/libGLESv1_CM_mali.so
 lib/egl/libGLESv2_mali.so
+lib/hw/audio_policy.montblanc.so
 lib/hw/audio.primary.montblanc.so
 lib/hw/camera.montblanc.so
 lib/hw/copybit.montblanc.so
@@ -114,6 +115,7 @@ lib/hw/hwcomposer.montblanc.so
 lib/hw/lights.montblanc.so
 lib/hw/sensors.montblanc.so
 lib/libacdapi_azi.so
+lib/libasound.so
 lib/libatparser.so
 lib/libaudiopolicy_sec.so
 lib/libbassapp.so
@@ -168,7 +170,6 @@ lib/libsomxwmad.so
 lib/libsomxwmv7d.so
 lib/libsomxwmv8d.so
 lib/libspeech_proc_customer_plugin.so
-lib/libstagefrighthw.so
 lib/libste_adm.so
 lib/libste_audio_hwctrl.so
 lib/libstecom.so
@@ -228,6 +229,7 @@ lib/ste_omxcomponents/libst_omxnorcos.so
 lib/ste_omxcomponents/libst_omxredeye_corrector.so
 lib/ste_omxcomponents/libst_omxredeye_detector.so
 lib/ste_omxcomponents/libst_omxsplitter.so
+lib/libstagefrighthw.so
 lib/tee/cops_ta.ssw
 lib/tee/custom_ta.ssw
 lib/tee/libbassapp_ssw
