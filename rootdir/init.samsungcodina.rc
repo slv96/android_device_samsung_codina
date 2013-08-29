@@ -1,4 +1,4 @@
-import /init.samsungcodina.usb.rc
+import init.samsungcodina.usb.rc
 
 on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
@@ -29,9 +29,6 @@ on init
     export LD_LIBRARY_PATH /system/lib:/lib:/usr/lib:/system/lib/ste_omxcomponents/:/vendor/lib
     export OMX_STE_ENS_COMPONENTS_DIR /system/lib/ste_omxcomponents/
     export OMX_BELLAGIO_LOADER_REGISTRY /system/etc/omxloaders
-
-    export TERMINFO /system/etc/terminfo
-    export TERM linux
 
     # Vibetonz
     export VIBE_PIPE_PATH /dev/pipes
@@ -371,13 +368,13 @@ on boot
 
 # GPS
     chown root system /dev/ttyAMA1
-    chmod 0660 dev/ttyAMA1
-
-    chown root system sys/class/sec/gps/GPS_ON_OFF/value
-    chmod 0664 sys/class/sec/gps/GPS_ON_OFF/value
-
-    chown root system sys/class/sec/gps/GPS_nRST/value
-    chmod 0664 sys/class/sec/gps/GPS_nRST/value
+    chmod 0660 /dev/ttyAMA1
+    chown root system /sys/class/sec/gps/GPS_ON_OFF/value
+    chmod 0664 /sys/class/sec/gps/GPS_ON_OFF/value
+    chown root system /sys/class/sec/gps/GPS_nRST/value
+    chmod 0664 /sys/class/sec/gps/GPS_nRST/value
+    mkdir /data/gps 771 system system
+    chown system system /data/gps
 
 # permissions for FMRadio of Broadcom
     chmod 0777 /system/bin/btld
@@ -403,9 +400,6 @@ on boot
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sts/class/rfkill/rfkill0/type
-
-# 4.3 requires this
-    chmod 0644 /proc/cmdline
 
 # bluetooth MAC address programming
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
@@ -493,9 +487,6 @@ service cspsa /system/bin/cspsa-server
     class parameter_storage
     user root
     oneshot
-
-service auditd /system/bin/auditd -k
-    class main
 
 # init Phonet net device required for Phonet communication with Modem
 service phonet-netdev /system/bin/ifconfig upnlink0 up
@@ -638,6 +629,12 @@ service iprenew_bnep0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
+service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+    class main
+    user gps
+    group system net_raw
+    ioprio be 0
+
 #for WiFi MFG(TestMode)
 service mfgloader /system/bin/mfgloader
     class main
@@ -650,11 +647,5 @@ service wlandutservice /system/bin/wlandutservice
     group wifi net_raw net_admin system inet
     disabled
     oneshot
-
-service gpsd /system/bin/gpsd -c /system/etc/gps.xml
-    class main
-    user gps
-    group system net_raw
-    ioprio be 0 
 
 # end of wifi

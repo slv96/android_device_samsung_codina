@@ -40,12 +40,11 @@ import android.telephony.SignalStrength;
 import static com.android.internal.telephony.RILConstants.*;
 
 import com.android.internal.telephony.CommandException;
-import com.android.internal.telephony.dataconnection.DataCallResponse;
-import com.android.internal.telephony.dataconnection.DcFailCause;
+import com.android.internal.telephony.DataCallState;
+import com.android.internal.telephony.DataConnection.FailCause;
 import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
 import com.android.internal.telephony.gsm.SuppServiceNotification;
 import com.android.internal.telephony.RILConstants;
-import com.android.internal.telephony.RIL;
 import com.android.internal.telephony.cdma.CdmaCallWaitingNotification;
 import com.android.internal.telephony.cdma.CdmaInformationRecords;
 import com.android.internal.telephony.cdma.CdmaInformationRecords.CdmaSignalInfoRec;
@@ -80,22 +79,17 @@ import android.util.Log;
 
 import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
 import com.android.internal.telephony.gsm.SuppServiceNotification;
-import com.android.internal.telephony.uicc.IccCardApplicationStatus;
 import com.android.internal.telephony.cdma.CdmaCallWaitingNotification;
 import com.android.internal.telephony.cdma.CdmaInformationRecords;
-import com.android.internal.telephony.uicc.IccRefreshResponse;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
-import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.Runtime;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SamsungU8500RIL extends RIL implements CommandsInterface {
 
@@ -184,8 +178,6 @@ public class SamsungU8500RIL extends RIL implements CommandsInterface {
     static final int RIL_UNSOL_UTS_GET_UNREAD_SMS_STATUS = 11031;
     static final int RIL_UNSOL_MIP_CONNECT_STATUS = 11032;
 
-    ArrayList<RILRequest> mRequestsList = new ArrayList<RILRequest>();
-
     protected HandlerThread mSamsungu8500RILThread;
     protected ConnectivityHandler mSamsungu8500RILHandler;
     private AudioManager audioManager;
@@ -263,8 +255,8 @@ public class SamsungU8500RIL extends RIL implements CommandsInterface {
         RILRequest rr = RILRequest.obtain(
                 RILConstants.RIL_REQUEST_SET_PREFERRED_NETWORK_TYPE, response);
 
-        rr.mParcel.writeInt(1);
-        rr.mParcel.writeInt(networkType);
+        rr.mp.writeInt(1);
+        rr.mp.writeInt(networkType);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " : " + networkType);
@@ -604,17 +596,17 @@ public class SamsungU8500RIL extends RIL implements CommandsInterface {
         }
 
         rr = RILRequest.obtain(RIL_REQUEST_DIAL, result);
-        rr.mParcel.writeString(address);
-        rr.mParcel.writeInt(clirMode);
-        rr.mParcel.writeInt(0); // UUS information is absent
+        rr.mp.writeString(address);
+        rr.mp.writeInt(clirMode);
+        rr.mp.writeInt(0); // UUS information is absent
 
         if (uusInfo == null) {
-            rr.mParcel.writeInt(0); // UUS information is absent
+            rr.mp.writeInt(0); // UUS information is absent
         } else {
-            rr.mParcel.writeInt(1); // UUS information is present
-            rr.mParcel.writeInt(uusInfo.getType());
-            rr.mParcel.writeInt(uusInfo.getDcs());
-            rr.mParcel.writeByteArray(uusInfo.getUserData());
+            rr.mp.writeInt(1); // UUS information is present
+            rr.mp.writeInt(uusInfo.getType());
+            rr.mp.writeInt(uusInfo.getDcs());
+            rr.mp.writeByteArray(uusInfo.getUserData());
         }
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
@@ -628,10 +620,10 @@ public class SamsungU8500RIL extends RIL implements CommandsInterface {
         Log.v(LOG_TAG, "Emergency dial: " + address);
 
         rr = RILRequest.obtain(RIL_REQUEST_DIAL_EMERGENCY, result);
-        rr.mParcel.writeString(address + "/");
-        rr.mParcel.writeInt(clirMode);
-        rr.mParcel.writeInt(0);
-        rr.mParcel.writeInt(0);
+        rr.mp.writeString(address + "/");
+        rr.mp.writeInt(clirMode);
+        rr.mp.writeInt(0);
+        rr.mp.writeInt(0);
 
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
 

@@ -111,8 +111,6 @@ BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
-TARGET_RECOVERY_FSTAB := device/samsung/codina/rootdir/fstab.samsungcodina
-RECOVERY_FSTAB_VERSION := 2
 
 # Enable WEBGL in WebKit
 ENABLE_WEBGL := true
@@ -127,6 +125,9 @@ BOARD_USES_PROPRIETARY_LIBFIMC := true
 COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
 DISABLE_HW_ID_MATCH_CHECK :=true
+
+# Device specific headers
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/codina/include
 
 # Charging mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/devices/virtual/power_supply/battery/lpm_mode
