@@ -111,6 +111,8 @@ BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
+TARGET_RECOVERY_FSTAB := device/samsung/codina/rootdir/fstab.samsungcodina
+RECOVERY_FSTAB_VERSION := 2
 
 # Enable WEBGL in WebKit
 ENABLE_WEBGL := true

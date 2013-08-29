@@ -30,6 +30,9 @@ on init
     export OMX_STE_ENS_COMPONENTS_DIR /system/lib/ste_omxcomponents/
     export OMX_BELLAGIO_LOADER_REGISTRY /system/etc/omxloaders
 
+    export TERMINFO /system/etc/terminfo
+    export TERM linux
+
     # Vibetonz
     export VIBE_PIPE_PATH /dev/pipes
     mkdir /dev/pipes 0771 shell shell
@@ -401,6 +404,9 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sts/class/rfkill/rfkill0/type
 
+# 4.3 requires this
+    chmod 0644 /proc/cmdline
+
 # bluetooth MAC address programming
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
     chown bluetooth bluetooth ro.bt.bdaddr_path
@@ -487,6 +493,9 @@ service cspsa /system/bin/cspsa-server
     class parameter_storage
     user root
     oneshot
+
+service auditd /system/bin/auditd -k
+    class main
 
 # init Phonet net device required for Phonet communication with Modem
 service phonet-netdev /system/bin/ifconfig upnlink0 up
