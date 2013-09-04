@@ -205,7 +205,6 @@ on post-fs-data
     mkdir /efs/bluetooth 0775 radio system
     mkdir /efs/imei 0775 radio system
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
-    mkdir /data/misc/wifi/hostapd.sockets 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0775 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
@@ -635,12 +634,6 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     user gps
     group system net_raw
     ioprio be 0
-
-service hostapd /system/bin/logwrapper /system/bin/Hostapd -d /data/misc/wifi/hostapd.conf
-    class post-zygote_services
-    socket hostapd_tiwlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
 
 #for WiFi MFG(TestMode)
 service mfgloader /system/bin/mfgloader
