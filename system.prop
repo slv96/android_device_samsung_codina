@@ -26,6 +26,7 @@ ste.video.enc.out.buffercnt=5
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=150
 dalvik.vm.dexopt-data-only=1
+ro.config.vc_call_vol_steps=8
 
 # Hardware info
 ro.device.chipset=ST-Ericsson NovaThor U8500 (45nm)
