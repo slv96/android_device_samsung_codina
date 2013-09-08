@@ -113,7 +113,6 @@ lib/hw/gralloc.montblanc.so
 lib/hw/hwcomposer.montblanc.so
 lib/hw/sensors.montblanc.so
 lib/libacdapi_azi.so
-lib/libasound.so
 lib/libaudiopolicy_sec.so
 lib/libbt-aptx-4.0.3.so
 lib/libcamera_client.so
@@ -136,7 +135,6 @@ lib/libste_omxil-interface.so
 lib/libatparser.so
 lib/libaudiopolicy_sec.so
 lib/libbassapp.so
-lib/libblt_hw.so
 lib/libcn.so
 lib/libcontrolcsc.so
 lib/libcops.so
@@ -157,7 +155,6 @@ lib/libnmfee.so
 lib/libnmf.so
 lib/libnmftimer.so
 lib/libomission_avoidance.so
-lib/libomxil-bellagio.so
 lib/libphonet.so
 lib/libpower.so
 lib/libpscc.so
