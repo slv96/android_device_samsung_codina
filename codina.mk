@@ -6,7 +6,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PACKAGES += \
-    libasound \ 
+    libasound \
     audio.a2dp.default \
     audio.usb.default \
     lights.montblanc \
