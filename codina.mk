@@ -54,7 +54,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/cspsa.conf:system/etc/cspsa.conf \
     $(LOCAL_PATH)/configs/omxloaders:system/etc/omxloaders \
     $(LOCAL_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh \
-    $(LOCAL_PATH)/configs/usbid_init.sh:system/bin/usbid_init.sh \
+    $(LOCAL_PATH)/configs/usbid_init.sh:system/bin/usbid_init.sh
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -66,7 +66,7 @@ PRODUCT_COPY_FILES += \
 # Media configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
 PRODUCT_PACKAGES += \
     libomxil-bellagio
 
