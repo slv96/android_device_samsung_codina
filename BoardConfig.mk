@@ -86,7 +86,7 @@ WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/wifi/bcmdhd_p2p.bin"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
 WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 BOARD_LEGACY_NL80211_STA_EVENTS  := true
-BOARD_HAVE_SAMSUNG_WIF           := true
+BOARD_HAVE_SAMSUNG_WIFI          := true
 BOARD_NO_APSME_ATTR              := true 
 
 # Audio
@@ -132,6 +132,7 @@ DISABLE_HW_ID_MATCH_CHECK :=true
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/codina/include
 
 # Charging mode
+BOARD_CHARGER_ENABLE_SUSPEND := true 
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/devices/virtual/power_supply/battery/lpm_mode
 BOARD_BATTERY_DEVICE_NAME := "battery"
 BOARD_CHARGER_RES := device/samsung/codina/res/charger
