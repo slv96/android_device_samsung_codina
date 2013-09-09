@@ -10,6 +10,7 @@ TARGET_NO_RADIOIMAGE := true
 # Platform 
 TARGET_BOARD_PLATFORM := montblanc
 BOARD_USES_STE_HARDWARE := true
+TARGET_SOC := u8500
 COMMON_GLOBAL_CFLAGS += -DSTE_HARDWARE -DSAMSUNG_STE -DSTE_SAMSUNG_HARDWARE
 
 # Architecture
@@ -86,7 +87,6 @@ WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/wifi/bcmdhd_p2p.bin"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
 WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 BOARD_LEGACY_NL80211_STA_EVENTS  := true
-BOARD_HAVE_SAMSUNG_WIFI          := true
 BOARD_NO_APSME_ATTR              := true 
 
 # Audio
