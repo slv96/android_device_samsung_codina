@@ -61,7 +61,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/codina/shbootimg.mk
 
 # Graphics
 BOARD_EGL_CFG := device/samsung/codina/configs/egl.cfg
-#BOARD_EGL_NEEDS_LEGACY_FB := true
+BOARD_EGL_NEEDS_LEGACY_FB := true
 USE_OPENGL_RENDERER := true
 
 # Bluetooth
