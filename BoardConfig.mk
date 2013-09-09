@@ -86,6 +86,8 @@ WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/wifi/bcmdhd_p2p.bin"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
 WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 BOARD_LEGACY_NL80211_STA_EVENTS  := true
+BOARD_HAVE_SAMSUNG_WIF           := true
+BOARD_NO_APSME_ATTR              := true 
 
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
