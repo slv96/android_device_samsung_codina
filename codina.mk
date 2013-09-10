@@ -1,4 +1,17 @@
-DEVICE_PACKAGE_OVERLAYS := device/samsung/codina/overlay
+# Include common makefile
+$(call inherit-product, device/samsung/u8500-common/common.mk)
+
+#For better compatibility with ROMs (like Slim, PAC)
+$(call inherit-product, vendor/samsung/u8500-common/codina/codina-vendor-blobs.mk)
+
+ifneq ($(TARGET_SCREEN_HEIGHT),800)
+# Call cm.mk because somehow it's not being called!
+$(call inherit-product, device/samsung/codina/cm.mk)
+endif
+
+LOCAL_PATH := device/samsung/codina
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
@@ -45,28 +58,24 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.samsungcodina:root/fstab.samsungcodina \
     $(LOCAL_PATH)/rootdir/init.samsungcodina.rc:root/init.samsungcodina.rc \
     $(LOCAL_PATH)/rootdir/init.samsungcodina.usb.rc:root/init.samsungcodina.usb.rc \
-    $(LOCAL_PATH)/rootdir/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/rootdir/prerecovery.rc:root/prerecovery.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.samsungcodina.rc:root/ueventd.samsungcodina.rc
-
+    $(LOCAL_PATH)/rootdir/ueventd.samsungcodina.rc:root/ueventd.samsungcodina.rc \
+    $(LOCAL_PATH)/rootdir/recovery.rc:root/init.recovery.codina.rc
+    
 # STE
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/cspsa.conf:system/etc/cspsa.conf \
-    $(LOCAL_PATH)/configs/omxloaders:system/etc/omxloaders \
-    $(LOCAL_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh \
-    $(LOCAL_PATH)/configs/usbid_init.sh:system/bin/usbid_init.sh
+    $(LOCAL_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/asound.conf:system/etc/asound.conf \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500 \
     $(LOCAL_PATH)/configs/Volume.db:system/etc/Volume.db
 
 # Media configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
+
 PRODUCT_PACKAGES += \
     libomxil-bellagio
 
@@ -74,20 +83,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dbus.conf:system/etc/dbus.conf
 
-# Wifi
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
-
 # Gps
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
-
-    $(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
-# Vold and Storage
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # Graphics
 PRODUCT_PACKAGES += \
