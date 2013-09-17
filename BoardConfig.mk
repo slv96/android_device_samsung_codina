@@ -20,7 +20,6 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
-
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_RECOVERY_INITRC := device/samsung/codina/rootdir/recovery.rc
@@ -47,6 +46,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
 BOARD_EGL_CFG := device/samsung/codina/configs/egl.cfg
 BOARD_EGL_NEEDS_LEGACY_FB := true
 TARGET_DISABLE_TRIPLE_BUFFERING := true
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/codina/bluetooth
@@ -72,9 +72,7 @@ BOARD_NO_APSME_ATTR              := true
 # Audio
 BOARD_HAS_MR0_STE_AUDIO := true
 MR0_AUDIO_BLOB := true
-
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/musb-ux500.0/musb-hdrc/gadget/lun%d/file"
 
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 25
@@ -84,13 +82,10 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/codina/recovery/recovery_keys.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/codina/recovery/graphics.c
-
-# Enable WEBGL in WebKit
-ENABLE_WEBGL := true
+TARGET_RECOVERY_INITRC := device/samsung/codina/rootdir/recovery.rc
 
 # RIL
 BOARD_USES_LIBSECRIL_STUB := true
-BOARD_RIL_CLASS := ../../../device/samsung/codina/ril/
 
 # Camera
 BOARD_USES_PROPRIETARY_LIBCAMERA := true
@@ -98,3 +93,13 @@ BOARD_USES_PROPRIETARY_LIBFIMC := true
 COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
 DISABLE_HW_ID_MATCH_CHECK :=true
+
+# OMX
+BOARD_NONBLOCK_MODE_PROCESS := true
+BOARD_USE_STOREMETADATA := true
+BOARD_USE_METADATABUFFERTYPE := true
+
+# HWComposer
+BOARD_USES_HWCOMPOSER := true
+BOARD_USE_SYSFS_VSYNC_NOTIFICATION := true
+BOARD_USES_MFC_FPS := true
