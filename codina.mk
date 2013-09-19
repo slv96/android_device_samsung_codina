@@ -90,7 +90,9 @@ PRODUCT_PACKAGES += \
 
 # Keylayout configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/codina-kp.kl:system/usr/keylayout/codina-kp.kl
+    $(LOCAL_PATH)/usr/keylayout/codina-kp.kl:system/usr/keylayout/codina-kp.kl \
+    $(LOCAL_PATH)/usr/keylayout/codina-kp.kl:system/usr/keylayout/gpio-keys.kl
+
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
