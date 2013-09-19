@@ -85,6 +85,8 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/codina/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/samsung/codina/rootdir/recovery.rc
 
 # RIL
+BOARD_RIL_CLASS := ../../../device/samsung/codina/ril/
+BOARD_MOBILEDATA_INTERFACE_NAME := "pdp0"
 BOARD_USES_LIBSECRIL_STUB := true
 
 # Camera
