@@ -76,19 +76,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
 
-PRODUCT_PACKAGES += \
-    libomxil-bellagio
-
 # Dbus
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dbus.conf:system/etc/dbus.conf
 
 # Gps
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
-# Graphics
-PRODUCT_PACKAGES += \
-    libblt_hw
 
 # Charger
 PRODUCT_PACKAGES += \
