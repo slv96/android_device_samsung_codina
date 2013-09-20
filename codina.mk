@@ -91,12 +91,6 @@ PRODUCT_PACKAGES += \
     charger \
     charger_res_images
 
-# Keylayout configuration
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/usr/keylayout/codina-kp.kl:system/usr/keylayout/codina-kp.kl \
-    $(LOCAL_PATH)/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
-
-
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
