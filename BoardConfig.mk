@@ -66,7 +66,9 @@ WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/wifi/bcmdhd_p2p.bin"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
 WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
-BOARD_NO_APSME_ATTR              := true 
+WIFI_BAND                        := 802_11_ABG
+BOARD_LEGACY_NL80211_STA_EVENTS  := true
+BOARD_NO_APSME_ATTR              := true
 
 # Audio
 BOARD_HAS_MR0_STE_AUDIO := true
