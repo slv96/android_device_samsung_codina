@@ -520,9 +520,6 @@ service admsrv /system/bin/admsrv
     ioprio rt 4
     capability NET_ADMIN NET_RAW SYS_NICE
 
-service stedump /system/bin/stedump
-    class main
-    user root
 
 service geomagneticd /system/bin/geomagneticd6x
     user compass
