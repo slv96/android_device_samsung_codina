@@ -432,15 +432,6 @@ on boot
 
     # temp Torch workaround
     chmod 0222 /sys/class/sec/flash/enable
-    
-    # fbearlysuspend module parameters permissions
-    chown system system /sys/module/fbearlysuspend/parameters/fbdelay
-    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_ms
-    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_first
-    chown system system /sys/module/fbearlysuspend/parameters/fbdelay_first_ms
-    
-    # deepest sleep state fix for device parts
-    chown system system /d/cpuidle/deepest_state
 
     # camera debug
     setprop persist.debug.extcamera.level 777
@@ -594,7 +585,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
-    oneshott
+    oneshot
 
 service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
     class main
@@ -607,6 +598,11 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     oneshot
 
 service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
+    class main
+    disabled
+    oneshot
+
+service dhcpcd_rmnet0 /system/bin/dhcpcd -aABKL
     class main
     disabled
     oneshot
