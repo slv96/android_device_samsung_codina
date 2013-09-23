@@ -26,9 +26,10 @@ on init
 
     # setup the global environment
     export PATH /system/sbin:/system/bin:/system/xbin:/sbin:/bin:/vendor/bin
-    export LD_LIBRARY_PATH /system/lib:/lib:/usr/lib:/system/lib/ste_omxcomponents/:/vendor/lib
+    export LD_LIBRARY_PATH /system/lib:/lib:/usr/lib:/system/lib/ste_omxcomponents:/vendor/lib
     export OMX_STE_ENS_COMPONENTS_DIR /system/lib/ste_omxcomponents/
     export OMX_BELLAGIO_LOADER_REGISTRY /system/etc/omxloaders
+    export OMX_STE_CSCALL_COMPONENTS_DIR /system/lib/ste_omxcomponents/ 
 
     # Vibetonz
     export VIBE_PIPE_PATH /dev/pipes
@@ -412,7 +413,6 @@ on boot
 
     # Permissions for LCD
     chown system system /sys/class/backlight/panel/brightness
-    chown system system /sys/class/backlight/panel/auto_brightness
     chown system radio /sys/class/lcd/panel/lcd_power
     chown system radio /sys/class/lcd/panel/lcd_type
     chown system media_rw /sys/class/lcd/panel/power_reduce
@@ -598,11 +598,6 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     oneshot
 
 service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
-    class main
-    disabled
-    oneshot
-
-service dhcpcd_rmnet0 /system/bin/dhcpcd -aABKL
     class main
     disabled
     oneshot
