@@ -80,7 +80,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dbus.conf:system/etc/dbus.conf
 
 # Gps
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # Graphics
 PRODUCT_PACKAGES += \
