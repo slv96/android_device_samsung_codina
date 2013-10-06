@@ -19,6 +19,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PACKAGES += \
+    GalaxyAce2Settings \
     libasound \
     audio.a2dp.default \
     audio.usb.default \
