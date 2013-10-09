@@ -647,11 +647,3 @@ service wlandutservice /system/bin/wlandutservice
     oneshot
 
 # end of wifi
-
-# Disable dithering while bootanimation is show and enable it again once we left it.
-# Thanks to OliverG96
-on property:init.svc.bootanim=running
-	setprop persist.sys.use_dithering 0
-     
-on property:init.svc.bootanim=stopped
-	setprop persist.sys.use_dithering 2

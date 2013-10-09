@@ -6,3 +6,4 @@ ro.allow.mock.location=1
 ro.debuggable=1
 persist.sys.usb.config=adb
 persist.sys.strictmode.disable=1
+persist.sys.use_dithering=2
