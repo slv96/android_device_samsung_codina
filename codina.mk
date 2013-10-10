@@ -77,6 +77,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+
 # Graphics
 PRODUCT_PACKAGES += \
     libblt_hw 
