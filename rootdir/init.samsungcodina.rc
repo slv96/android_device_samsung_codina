@@ -649,4 +649,4 @@ service wlandutservice /system/bin/wlandutservice
 # end of wifi
 #Try to fix dithering on bootanimation
 on property:init.svc.bootanim=running
-   setprop persist.sys.use_dithering 2
+   setprop persist.sys.use_dithering 1
