@@ -37,7 +37,5 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/codina/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/codina/recovery/graphics.c
 TARGET_RECOVERY_FSTAB := device/samsung/codina/recovery.fstab
-RECOVERY_FSTAB_VERSION := 2
+
