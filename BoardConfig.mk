@@ -37,5 +37,5 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/codina/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/codina/rootdir/recovery.fstab
 
