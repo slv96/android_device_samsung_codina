@@ -47,8 +47,8 @@ on init
     mkdir /debug
     mount debugfs none /debug
 
-    # add this so modem-supervisor find property_get
-    export LD_PRELOAD /system/lib/libcutils.so 
+    # Prevents permission denied error for telephony
+    chmod 0644 /proc/cmdline
 
 on fs
 
