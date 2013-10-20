@@ -203,9 +203,6 @@ on post-fs
 on post-fs-data
 
     # give system access to wpa_supplicant.conf for backup and restore
-
-    mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
-    mkdir /data/misc/bluetooth 0770 system system
     mkdir /data/misc/wifi 0770 wifi system
     mkdir /efs/wifi 0775 radio system
     mkdir /efs/bluetooth 0775 radio system
@@ -387,13 +384,15 @@ on boot
 
 # Peremissions for bluetooth
     # UART device
-    chown bluetooth net_bt_stack /dev/ttyAMA0
+    chown bluetooth bluetooth /dev/ttyAMA0
     chmod 0660 /dev/ttyAMA0
 
 # for bluetooth. change access rights as btld runs as bluetooth user
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/claim	
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/soft
+    chown root bluetooth /sys/class/rfkill/rfkill0
+    chown root bluetooth /sys/class/rfkill/rfkill0/state
+    chown root bluetooth /sys/class/rfkill/rfkill0/claim	
+    chown root bluetooth /sys/class/rfkill/rfkill0/soft
+    chown root bluetooth /sys/class/rfkill/rfkill0/type
     chmod 0664 /sys/class/rfkill/rfkill0/state
     chmod 0664 /sys/class/rfkill/rfkill0/claim
     chmod 0664 /sys/class/rfkill/rfkill0/soft
@@ -402,8 +401,8 @@ on boot
 
 # power up/down interface
     chmod 0660 /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /sts/class/rfkill/rfkill0/type
 
 # bluetooth MAC address programming
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
@@ -511,46 +510,6 @@ service modem-supervisor /system/bin/modem-supervisor -f /dev/dbx500_mloader_fw 
 service copsd /system/bin/copsdaemon
     class modem-core
     user root
-
-service dbus /system/bin/dbus-daemon --system --nofork
-    socket dbus stream 660 bluetooth bluetooth
-    user bluetooth
-    group bluetooth net_bt_admin
-
-service bluetoothd /system/bin/bluetoothd -n
-    socket bluetooth stream 660 bluetooth bluetooth
-    socket dbus_bluetooth stream 660 bluetooth bluetooth
-    # init.rc does not yet support applying capabilities, so run as root and
-    # let bluetoothd drop uid to bluetooth with the right linux capabilities
-    group bluetooth net_bt_admin misc
-    disabled
-
-service hfag /system/bin/sdptool add --channel=10 HFAG
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-service hsag /system/bin/sdptool add --channel=11 HSAG
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-service opush /system/bin/sdptool add --channel=12 OPUSH
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-service pbap /system/bin/sdptool add --channel=19 PBAP
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-on property:ril.bt_macaddr=*
-    start bdaddr
 
 # Modem_log_relay
 service modem_log_relay /system/bin/modem_log_relay --ctrl_port=2001 --data_port=2002 --inv_port=2003 --report_port=2005
