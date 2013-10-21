@@ -52,7 +52,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.samsungcodina:root/fstab.samsungcodina \
     $(LOCAL_PATH)/rootdir/init.samsungcodina.rc:root/init.samsungcodina.rc \
     $(LOCAL_PATH)/rootdir/init.samsungcodina.usb.rc:root/init.samsungcodina.usb.rc \
-    $(LOCAL_PATH)/rootdir/prerecovery.rc:root/prerecovery.rc \
     $(LOCAL_PATH)/rootdir/ueventd.samsungcodina.rc:root/ueventd.samsungcodina.rc \
     $(LOCAL_PATH)/rootdir/recovery.rc:root/init.recovery.codina.rc
     
