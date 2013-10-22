@@ -21,6 +21,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
     GalaxyAce2Settings \
     CMAccount \
+    Stk \
     libasound \
     lights.montblanc
 
