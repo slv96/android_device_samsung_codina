@@ -10,4 +10,5 @@ TARGET_KERNEL_CONFIG := cyanogenmod_i8160_defconfig
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/codina/bluetooth
 
 # Recovery
+TARGET_RECOVERY_INITRC := device/samsung/codina/rootdir/recovery.rc
 TARGET_RECOVERY_FSTAB := device/samsung/codina/rootdir/fstab.samsungcodina

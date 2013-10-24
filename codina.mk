@@ -29,8 +29,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.samsungcodina:root/fstab.samsungcodina \
     $(LOCAL_PATH)/rootdir/init.samsungcodina.rc:root/init.samsungcodina.rc \
     $(LOCAL_PATH)/rootdir/init.samsungcodina.usb.rc:root/init.samsungcodina.usb.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.samsungcodina.rc:root/ueventd.samsungcodina.rc \
-    $(LOCAL_PATH)/rootdir/recovery.rc:root/init.recovery.samsungcodina.rc
+    $(LOCAL_PATH)/rootdir/ueventd.samsungcodina.rc:root/ueventd.samsungcodina.rc
     
 # STE
 PRODUCT_COPY_FILES += \
@@ -60,6 +59,5 @@ PRODUCT_PACKAGES += \
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
-
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
