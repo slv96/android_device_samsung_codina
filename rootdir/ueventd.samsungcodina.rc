@@ -15,8 +15,8 @@
 /dev/camera_flash         0660   media      system
 
 # Sensor i2c
-/dev/i2c-2				  0660   media      system
-/dev/i2c-4                0660	 system		system
+/dev/i2c-2                0660   media      system
+/dev/i2c-4                0660	 system     system
 
 # PWR QOS devices
 /dev/ape_opp              0660   media      system
@@ -41,7 +41,7 @@
 /dev/ttyGS0               0060   root       radio
 
 # for GPS
-/dev/ttyAMA1			  0664	 radio		system
+/dev/ttyAMA1              0664   radio      system
 
 #permission for dun
 /dev/dun                  0660   system     system

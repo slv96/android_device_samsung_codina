@@ -61,8 +61,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libblt_hw
 
-# Bluetooth configuration files
-PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
-
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
