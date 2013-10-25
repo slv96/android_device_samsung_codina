@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
 
 #Softkey Vibration
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
+    $(LOCAL_PATH)/configs/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
 
 # Graphics
 PRODUCT_PACKAGES += \
