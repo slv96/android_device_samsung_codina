@@ -581,7 +581,8 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     disabled
     oneshot
 
-service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
+service dhcpcd_bnep0 /system/bin/dhcpcd -BKLG
+    # This properly enables bluetooth tethering, it asigns a IP to any conected device
     class main
     disabled
     oneshot
