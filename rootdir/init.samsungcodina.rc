@@ -497,10 +497,12 @@ service admsrv /system/bin/admsrv
 service geomagneticd /system/bin/geomagneticd6x
     user compass
     group system input
+    disable
 
 service orientationd /system/bin/orientationd6x
     user compass
-    group system input group system input
+    group system input
+    disable
 
 # AT daemon
 service atd /system/bin/at_core -mode normal -serial ttyAMA2
