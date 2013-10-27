@@ -346,8 +346,10 @@ on boot
     chmod 0664 /sys/class/sec/gps/GPS_ON_OFF/value
     chown root system /sys/class/sec/gps/GPS_nRST/value
     chmod 0664 /sys/class/sec/gps/GPS_nRST/value
-    mkdir /data/gps 771 system system
-    chown system system /data/gps
+    rm /data/sv_cno.info
+    rm /data/gps_started
+    rm /data/glonass_started
+    rm /data/glonass_fcn
 
 # permissions for FMRadio of Broadcom
     chmod 0777 /system/bin/btld
@@ -431,7 +433,7 @@ on boot
     class_start modem
     class_start default
 
-# Make sure we startup btld before hcid
+# Make sure we startup btld beorfore hcid
 service btld /system/bin/btld -hb 3000000 -hp /dev/ttyAMA0 -lpm 1
     user root
     group bluetooth net_bt_admin
@@ -497,12 +499,10 @@ service admsrv /system/bin/admsrv
 service geomagneticd /system/bin/geomagneticd6x
     user compass
     group system input
-    disabled
 
 service orientationd /system/bin/orientationd6x
     user compass
     group system input
-    disabled
 
 # AT daemon
 service atd /system/bin/at_core -mode normal -serial ttyAMA2
