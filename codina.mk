@@ -53,10 +53,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
-#Softkey Vibration
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
-
 # Graphics
 PRODUCT_PACKAGES += \
     libblt_hw
