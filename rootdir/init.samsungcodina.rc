@@ -30,6 +30,9 @@ on init
     export OMX_STE_ENS_COMPONENTS_DIR /system/lib/ste_omxcomponents/
     export OMX_BELLAGIO_LOADER_REGISTRY /system/etc/omxloaders
     export OMX_STE_CSCALL_COMPONENTS_DIR /system/lib/ste_omxcomponents/
+    
+    # Add this so modem-supervisor find property_get
+    export LD_PRELOAD /system/lib/libcutils.so
 
     # Vibetonz
     export VIBE_PIPE_PATH /dev/pipes
