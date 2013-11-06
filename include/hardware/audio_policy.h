@@ -261,11 +261,18 @@ struct audio_policy {
     int (*set_effect_enabled)(struct audio_policy *pol, int id, bool enabled);
 
     bool (*is_stream_active)(const struct audio_policy *pol,
-                             audio_stream_type_t stream,
-                             uint32_t in_past_ms);
+            audio_stream_type_t stream,
+            uint32_t in_past_ms);
+#ifndef ICS_AUDIO_BLOB
+#ifndef MR1_AUDIO_BLOB
+    bool (*is_stream_active_remotely)(const struct audio_policy *pol,
+            audio_stream_type_t stream,
+            uint32_t in_past_ms);
+#endif
 
     bool (*is_source_active)(const struct audio_policy *pol,
-                             audio_source_t source);
+            audio_source_t source);
+#endif
 
     /* dump state */
     int (*dump)(const struct audio_policy *pol, int fd);
@@ -298,12 +305,7 @@ struct audio_policy_service_ops {
                                      audio_format_t *pFormat,
                                      audio_channel_mask_t *pChannelMask,
                                      uint32_t *pLatencyMs,
-#ifdef STE_AUDIO
-                                     audio_output_flags_t flags,
-                                     audio_input_clients *pInputClientId);
-#else
                                      audio_output_flags_t flags);
-#endif
 
 #ifdef QCOM_ICS_LPA_COMPAT
     audio_io_handle_t (*open_session)(void *service,
@@ -359,7 +361,6 @@ struct audio_policy_service_ops {
     /* closes an audio input */
     int (*close_input)(void *service, audio_io_handle_t input,
                         audio_input_clients *inputClientId);
-
 #else
                                     audio_in_acoustics_t acoustics);
 
@@ -464,7 +465,12 @@ struct audio_policy_service_ops {
                                     audio_devices_t *pDevices,
                                     uint32_t *pSamplingRate,
                                     audio_format_t *pFormat,
+#ifdef STE_AUDIO
+                                    audio_channel_mask_t *pChannelMask,
+                                    audio_input_clients *pInputClientId);
+#else
                                     audio_channel_mask_t *pChannelMask);
+#endif
 
 };
 
