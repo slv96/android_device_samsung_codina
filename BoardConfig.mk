@@ -12,3 +12,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/codina/bluetooth
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/codina/rootdir/fstab.samsungcodina
+
+# Audio
+COMMON_GLOBAL_CFLAGS += -DSTE_AUDIO
