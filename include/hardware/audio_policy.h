@@ -183,7 +183,7 @@ struct audio_policy {
                                    uint32_t samplingRate,
                                    audio_format_t format,
                                    audio_channel_mask_t channelMask,
-#ifdef STE_SAMUSNG_HARDWARE
+#ifdef STE_AUDIO
                                    audio_in_acoustics_t acoustics,
                                    audio_input_clients *inputClientId);
 #else
@@ -298,7 +298,7 @@ struct audio_policy_service_ops {
                                      audio_format_t *pFormat,
                                      audio_channel_mask_t *pChannelMask,
                                      uint32_t *pLatencyMs,
-#ifdef STE_SAMSUNG_HARDWARE
+#ifdef STE_AUDIO
                                      audio_output_flags_t flags,
                                      audio_input_clients *pInputClientId);
 #else

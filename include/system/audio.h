@@ -502,7 +502,7 @@ enum {
 
 typedef uint32_t audio_devices_t;
 
-#ifdef STE_SAMSUNG_HARDWARE
+#ifdef STE_AUDIO
 
 // AUDIO_INPUT_CLIENT_ID_BASE provide a means to refer to client Id´s not
 // explicitly defined in the enum audio_input_clients
