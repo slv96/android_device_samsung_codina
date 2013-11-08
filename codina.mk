@@ -37,6 +37,8 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/asound.conf:system/etc/asound.conf \
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500
 
 PRODUCT_PACKAGES += \
