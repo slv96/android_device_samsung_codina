@@ -3,6 +3,10 @@ import init.samsungcodina.usb.rc
 on early-init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
+	
+    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
 
     mkdir /storage 0775 system system
     mkdir /storage/sdcard0 0775 system system
@@ -436,6 +440,19 @@ on boot
     # Modem
     class_start modem
     class_start default
+
+# FUSE sdcard daemon service for sdcard and usbdisk
+service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard0 /storage/sdcard0
+    class late_start
+    disabled
+
+service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard1 /storage/sdcard1
+    class late_start
+    disabled
+
+service fuse_usbdisk0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk0 /storage/usbdisk
+    class late_start
+    disabled
 
 # Make sure we startup btld before hcid
 service btld /system/bin/btld -hb 3000000 -hp /dev/ttyAMA0 -lpm 1
