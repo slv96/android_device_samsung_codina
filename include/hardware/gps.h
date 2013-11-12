@@ -229,11 +229,6 @@ typedef uint16_t AGpsStatusValue;
 #define AGPS_RIL_INTERFACE      "agps_ril"
 
 /**
- * Name for the GPS_Geofencing interface.
- */
-#define GPS_GEOFENCING_INTERFACE   "gps_geofencing"
-
-/**
  * The GPS chipset can use Psc for AGPS.
  */
 #define AGPS_USE_PSC
