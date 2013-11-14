@@ -11,7 +11,6 @@ on early-init
     mkdir /efs 0771 radio system
     mkdir /modemfs 0771 system system
     mkdir /preload 0771 system system
-    mkdir /mnt 0775 root system
     mkdir /mnt/.lfs 0755 root root
 
     # for backwards compatibility
