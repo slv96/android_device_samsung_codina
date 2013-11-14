@@ -8,7 +8,6 @@ rild.libargs=-d /dev/ttyS0
 rild.libpath=/system/lib/libsec-ril.so
 ro.telephony.call_ring.multiple=false
 ro.telephony.ril_class=SamsungU8500RIL
-ro.telephony.default_network=0
 ro.telephony.sends_barcount=1
 ro.ril.gprsclass=10
 ro.ril.hsxpa=1
