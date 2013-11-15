@@ -1,4 +1,4 @@
-Cyanogenmod 11.0
+CyanogenMod 11.0
 =============================
 Device Tree for Samsung Galaxy Ace 2
 (GT-I8160)
