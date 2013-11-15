@@ -1,5 +1,5 @@
-=============================
 Cyanogenmod 10.2 Device Tree for Samsung Galaxy Ace 2 (GT-I8160)
+=============================
 
 How to build:
 =============
@@ -35,14 +35,16 @@ How to build:
         git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_core refs/changes/34/52034/2
         git cherry-pick FETCH_HEAD
         cd ../..
+
 - Build CM10.2
   brunch codina
 
- Thanks
-CyanogenMod
-dh-harald
-SakuraDroid
-jereksel
-diego-ch
-frapeti
-ekim.tecul
+- Thanks
+  CyanogenMod
+  dh-harald
+  SakuraDroid
+  jereksel
+  diego-ch
+  frapeti
+  ekim.tecul
+
