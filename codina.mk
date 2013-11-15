@@ -46,9 +46,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wpa_supplicant_overlay.conf
 
-PRODUCT_PACKAGES += \
-    libomxil-bellagio
-
 # Dbus
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dbus.conf:system/etc/dbus.conf
@@ -56,9 +53,5 @@ PRODUCT_COPY_FILES += \
 # Gps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
-
-# Graphics
-PRODUCT_PACKAGES += \
-    libblt_hw
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
