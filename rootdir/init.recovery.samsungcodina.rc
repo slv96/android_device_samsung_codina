@@ -19,12 +19,8 @@ on early-fs
 
     mount j4fs /dev/block/mmcblk0p1 /mnt/.lfs wait
 	
-on property:ro.debuggable=1
-    start console
-
-service recovery /sbin/recovery
-
-service adbd /sbin/adbd recovery
+on boot
+    service adbd /sbin/adbd recovery
     disabled
 
 # Always start adbd on userdebug and eng builds
