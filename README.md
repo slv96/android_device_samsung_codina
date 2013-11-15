@@ -8,8 +8,9 @@ How to build:
 
 - Make a workspace
 
-  $ mkdir -p ~/cyanogenmod/system
-  $ cd ~/cyanogenmod/system
+  mkdir -p ~/cyanogenmod/system
+  
+  cd ~/cyanogenmod/system
   
 - Do repo init & sync
 
