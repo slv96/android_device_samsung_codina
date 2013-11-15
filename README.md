@@ -39,14 +39,24 @@ How to build:
         cd ../..
 
 - Build CM10.2
+  
   brunch codina
 
 - Thanks
+  
   CyanogenMod
+
   dh-harald
-  SakuraDroid
+  
+  Sakura Droid
+  
   jereksel
+  
   diego-ch
+  
   frapeti
+  
+  OliverG96
+  
   ekim.tecul
 
