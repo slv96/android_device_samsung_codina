@@ -40,10 +40,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/asound.conf:system/etc/asound.conf \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500
-
-PRODUCT_PACKAGES += \
-    libomxil-bellagio
-
+    
 # Dbus
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dbus.conf:system/etc/dbus.conf
@@ -51,9 +48,5 @@ PRODUCT_COPY_FILES += \
 # Gps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
-
-# Graphics
-PRODUCT_PACKAGES += \
-    libblt_hw
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
