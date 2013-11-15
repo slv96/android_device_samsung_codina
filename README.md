@@ -1,6 +1,7 @@
 Cyanogenmod 10.2
 =============================
-Device Tree for Samsung Galaxy Ace 2 (GT-I8160)
+Device Tree for Samsung Galaxy Ace 2
+(GT-I8160)
 =============================
 
 How to build:
@@ -42,21 +43,15 @@ How to build:
   
   brunch codina
 
+
 - Thanks
   
   CyanogenMod
-
   dh-harald
-  
   Sakura Droid
-  
   jereksel
-  
   diego-ch
-  
   frapeti
-  
   OliverG96
-  
   ekim.tecul
 
