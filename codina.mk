@@ -20,8 +20,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PACKAGES += \
     GalaxyAce2Settings \
-    CMAccount \
-    lights.montblanc
+    CMAccount
 
 # Init files
 PRODUCT_COPY_FILES += \
