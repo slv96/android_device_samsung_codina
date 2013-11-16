@@ -1,12 +1,10 @@
 import init.samsungcodina.usb.rc
 
 on init
-    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /storage/sdcard0 0700 root root
-    mkdir /storage/sdcard1 0700 root root
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
+	mkdir /storage/sdcard0 0775 system system
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /efs 0771 radio system
     mkdir /modemfs 0771 system system
     mkdir /preload 0771 system system
@@ -609,10 +607,6 @@ service wlandutservice /system/bin/wlandutservice
 # end of wifi
 
 # FUSE sdcard daemon service for sdcard
-service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
-    class late_start
-    disabled
-
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
     class late_start
     disabled
