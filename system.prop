@@ -2,6 +2,7 @@
 # system.prop for GT-I8160
 #
 debug.hwui.render_dirty_regions=false
+ro.debuggable=1
 persist.service.adb.enable=1
 persist.sys.usb.config=mtp,adb
 rild.libargs=-d /dev/ttyS0
