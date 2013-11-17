@@ -1,11 +1,20 @@
 import init.samsungcodina.usb.rc
 
 on init
+
+    chmod 0701 /mnt/media_rw
+    mkdir /mnt/shell/emulated 0700 shell shell
+    mkdir /storage 0550 system sdcard_r
+    mkdir /storage/sdcard0 0700 root root
+    mkdir /storage/sdcard1 0700 root root
+    mkdir /storage/usbdisk0 0775 system system
+    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    mkdir /mnt/media_rw/usbdisk0 0775 system system
+
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
-    mkdir /storage/sdcard0 0775 system system
-    mkdir /storage/sdcard1 0700 root root
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    
     mkdir /efs 0771 radio system
     mkdir /modemfs 0771 system system
     mkdir /preload 0771 system system
@@ -49,6 +58,9 @@ on init
 on fs
 
     mount_all /fstab.samsungcodina
+    
+    setprop ro.crypto.fuse_sdcard true
+    
     start cspsa
 
 on post-fs
@@ -77,7 +89,7 @@ on post-fs
     chown radio system /efs/imei
     chmod 0770 /efs/imei
     chown radio system /efs/bluetooth
-    chown system system /efs/wifi
+    chown radio system /efs/wifi
 
     # Samsung Device permissions
     chown root system /dev/mmc328x
@@ -538,6 +550,20 @@ service immvibed /system/bin/immvibed
 on property:ro.dumpstate.dmesg=1
     write /proc/sys/kernel/dmesg_restrict 0
 
+
+service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard0 /storage/sdcard0
+    class late_start
+    disabled
+
+service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard1 /storage/sdcard1
+    class late_start
+    disabled
+
+service fuse_usbdisk0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk0 /storage/usbdisk0
+    class late_start
+    disabled
+
+
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -O/data/misc/wifi/sockets -N \
@@ -608,8 +634,3 @@ service wlandutservice /system/bin/wlandutservice
     oneshot
 
 # end of wifi
-
-# FUSE sdcard daemon service for sdcard
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
-    class late_start
-    disabled
