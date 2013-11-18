@@ -23,6 +23,11 @@ on init
     symlink /storage/sdcard0 /mnt/sdcard
     symlink /storage/sdcard1 /extSdCard
     symlink /storage/sdcard1 /mnt/extSdCard
+    
+    # KSM tunning
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/run 1
 
     # setup the global environment
     export PATH /system/sbin:/system/bin:/system/xbin:/sbin:/bin:/vendor/bin
