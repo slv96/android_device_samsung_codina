@@ -1,6 +1,5 @@
 -include device/samsung/u8500-common/BoardCommonConfig.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/codina/include
 TARGET_OTA_ASSERT_DEVICE := codina,i8160,GT-I8160
 
 # Kernel
