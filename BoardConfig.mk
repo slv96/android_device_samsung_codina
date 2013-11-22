@@ -10,8 +10,6 @@ TARGET_KERNEL_CONFIG := cyanogenmod_i8160_defconfig
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/codina/bluetooth
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/codina/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/codina/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/samsung/codina/rootdir/recovery.rc
 
 # Boot Animation
