@@ -20,9 +20,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PACKAGES += \
     GalaxyAce2Settings \
-    CMAccount \
-    libasound \
-    lights.montblanc
+    CMAccount
 
 # Filesystem management tools
 
