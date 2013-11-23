@@ -6,6 +6,9 @@ TARGET_OTA_ASSERT_DEVICE := codina,i8160,GT-I8160
 TARGET_KERNEL_SOURCE := kernel/samsung/codina
 TARGET_KERNEL_CONFIG := cyanogenmod_i8160_defconfig
 
+# Graphics
+BOARD_EGL_CFG := device/samsung/codina/configs/egl.cfg
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/codina/bluetooth
 
