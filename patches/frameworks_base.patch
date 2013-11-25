@@ -1,12 +1,3 @@
-From 57bb77d86e2d22c2da08ce644908df48c47b1897 Mon Sep 17 00:00:00 2001
-From: Robert Rozic <rooobertinhooo@gmail.com>
-Date: Sat, 16 Nov 2013 14:16:52 +0100
-Subject: [PATCH] Fix gps
-
----
- ...android_server_location_GpsLocationProvider.cpp |  185 +-------------------
- 1 file changed, 5 insertions(+), 180 deletions(-)
-
 diff --git a/frameworks/base/services/jni/com_android_server_location_GpsLocationProvider.cpp b/frameworks/base/services/jni/com_android_server_location_GpsLocationProvider.cpp
 index 9180f32..4285ddf 100644
 --- a/frameworks/base/services/jni/com_android_server_location_GpsLocationProvider.cpp
