@@ -278,5 +278,3 @@ index 9180f32..4285ddf 100644
  };
  
  int register_android_server_location_GpsLocationProvider(JNIEnv* env)
--- 
-1.7.9.5
