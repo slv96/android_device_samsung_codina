@@ -1,18 +1,19 @@
 import init.samsungcodina.usb.rc
 
 on init
+    export EXTERNAL_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /storage/sdcard1
 
     mkdir /storage/sdcard0 0700 root root
     mkdir /storage/sdcard1 0700 root root
+    
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    
-    export EXTERNAL_STORAGE /storage/sdcard0
-    export SECONDARY_STORAGE /storage/sdcard1
     
     mkdir /efs 0771 radio system
     mkdir /modemfs 0771 system system
     mkdir /preload 0771 system system
+    mkdir /mnt 0775 root system
     mkdir /mnt/.lfs 0755 root root
 
     # for backwards compatibility
@@ -58,8 +59,6 @@ on init
 on fs
 
     mount_all /fstab.samsungcodina
-    
-    setprop ro.crypto.fuse_sdcard true
     
     start cspsa
 
@@ -543,7 +542,6 @@ service immvibed /system/bin/immvibed
 
 on property:ro.dumpstate.dmesg=1
     write /proc/sys/kernel/dmesg_restrict 0
-
 
 service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
     class late_start
