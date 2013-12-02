@@ -15,7 +15,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 $(call inherit-product, device/samsung/codina/full_codina.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := cm_codina
+PRODUCT_NAME := omni_codina
 PRODUCT_DEVICE := codina
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-I8160
