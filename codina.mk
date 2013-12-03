@@ -13,13 +13,9 @@ LOCAL_PATH := device/samsung/codina
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
-PRODUCT_TAGS += dalvik.gc.type-precise
-
+# Ace 2 settings
 PRODUCT_PACKAGES += \
-    GalaxyAce2Settings \
-    CMAccount
+    GalaxyAce2Settings
 
 # Init files
 PRODUCT_COPY_FILES += \
