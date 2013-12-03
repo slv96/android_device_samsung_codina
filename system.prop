@@ -6,9 +6,6 @@ persist.service.adb.enable=1
 rild.libargs=-d /dev/ttyS0
 rild.libpath=/system/lib/libsec-ril.so
 ro.telephony.call_ring.multiple=false
-ro.telephony.ril_class=SamsungU8500RIL
-ro.telephony.sends_barcount=1
-ro.telephony.default_network=0
 ro.sf.lcd_density=240
 ste.cam.back.orientation=90
 ste.cam.ext.cfg.path.secondary=/system/usr/share/camera/config_file/aptina_mt9v113.dat
@@ -21,9 +18,6 @@ ste.video.dec.mpeg4.in.size=8192
 ste.video.dec.recycle.delay=1
 ste.video.enc.out.buffercnt=5
 dalvik.vm.dexopt-data-only=1
-ro.zygote.disable_gl_preload=1
-ro.bq.gpu_to_cpu_unsupported=1
-ro.boot.selinux=disabled
 
 # Hardware info
 ro.device.chipset=ST-Ericsson NovaThor U8500 (45nm)
