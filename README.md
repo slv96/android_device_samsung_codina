@@ -23,7 +23,17 @@ How to build:
   
   . build/envsetup.sh
 
-
+- Pull all not merged fixes from gerrit:
+  
+        cd art
+        git fetch https://github.com/cernekee/android_art monitor-stack-v1
+        git cherry-pick fc2ac71d0d9e147c607bff9371fe2ef25d8470af
+        cd ..
+        cd build
+        git fetch http://review.cyanogenmod.org/CyanogenMod/android_build refs/changes/59/53559/4
+        git cherry-pick FETCH_HEAD
+        cd ..
+		
 - Build CM11.0
   
   brunch codina
