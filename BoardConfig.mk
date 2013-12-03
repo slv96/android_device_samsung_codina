@@ -11,8 +11,3 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/codina/bluetooth
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/codina/rootdir/fstab.samsungcodina
-
-# Boot Animation
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-TARGET_BOOTANIMATION_USE_RGB565 := true
