@@ -1,4 +1,4 @@
-CyanogenMod 11.0
+OMNI ROM 4.4
 =============================
 Device Tree for Samsung Galaxy Ace 2
 (GT-I8160)
@@ -8,18 +8,17 @@ How to build:
 
 - Make a workspace
 
-  $ mkdir -p ~/cyanogenmod/system
-  $ cd ~/cyanogenmod/system
+  mkdir -p ~/omni-4.4/system
+  
+  cd ~/omni-4.4/system
   
 - Do repo init & sync
 
-  repo init https://github.com/TeamCanjica/android.git -b cm-11.0
+  repo init https://github.com/TeamCanjica/android.git -b omni-4.4
   
   repo sync -j32
 
 - Setup vendor
-  
-  ./vendor/cm/get-prebuilts
   
   . build/envsetup.sh
 
@@ -34,9 +33,10 @@ How to build:
         git cherry-pick FETCH_HEAD
         cd ..
 		
-- Build CM11.0
-  
-  brunch codina
+- Build Omni 4.4
 
+  lunch omni_codina-userdebug
+  
+  make -j6 bacon
 
 - Thanks : CyanogenMod, dh-harald, Sakura Droid, jereksel, diego-ch, frapeti, OliverG96, ekim.tecul
