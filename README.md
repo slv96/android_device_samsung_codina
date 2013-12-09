@@ -35,8 +35,6 @@ How to build:
 		
 - Build Omni 4.4
 
-  lunch omni_codina-userdebug
-  
-  make -j6 bacon
+  brunch codina
 
 - Thanks : CyanogenMod, dh-harald, Sakura Droid, jereksel, diego-ch, frapeti, OliverG96, ekim.tecul
