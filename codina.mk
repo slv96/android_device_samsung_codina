@@ -16,8 +16,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-PRODUCT_TAGS += dalvik.gc.type-precise
-
 PRODUCT_PACKAGES += \
     GalaxyAce2Settings \
     CMAccount
@@ -54,5 +52,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1 \
     persist.sys.vold.switchexternal=0
-
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
