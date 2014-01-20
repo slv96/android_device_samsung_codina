@@ -8,12 +8,12 @@
     <string name="category_general_title">Osnovno</string>
 
     <!-- CATEGORY: Radio mode -->
-    <string name="radio_subcat_title">Radio mode</string>
+    <string name="radio_subcat_title">Radio status</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">Uključivanje HSDPA/HSUPA</string>
 
     <!-- CATEGORY: Accelerometer -->
-    <string name="accelerometer_subcat_title">Accelerometer</string>
+    <string name="accelerometer_subcat_title">Akcelerometar</string>
     <string name="use_accelerometer_calibration_title_head">Koristi podatke kalibriranja</string>
     <string name="use_accelerometer_calibration_summary_head">Koristi iznose kalibriranja. Kalibriraj nakon ovog odabira!</string>
     <string name="calibrate_accelerometer_title_head">Kalibriraj</string>
@@ -32,9 +32,9 @@
     <!-- CATEGORY: Charger Control -->
     <string name="cc_subcat_title">Kontroliranje punjenja</string>
     <string name="ac_cc_title_head">Jakost zidnog punjača</string>
-    <string name="ac_cc_summary_head">Smanjivanjem se štiti baterija ali punjenje traje duže, povećavanjem se može oštetiti život baterije</string>
+    <string name="ac_cc_summary_head">Smanjivanjem se štiti baterija ali punjenje traje duže, povećavanjem se može smanjiti vijek baterije</string>
     <string name="usb_cc_title_head">Jakost USB punjenja</string>
-    <string name="usb_cc_summary_head">Korisno je odabrati Brzo Punjenje. Smanjivanjem se štiti baterija ali punjenje traje duže, povećavanjem se može oštetiti život baterije</string>
+    <string name="usb_cc_summary_head">Korisno je odabrati Brzo Punjenje. Smanjivanjem se štiti baterija ali punjenje traje duže, povećavanjem se može smanjiti vijek baterije</string>
 
     <!-- CATEGORY: Charger Control -->
     <string name="deepsleep_subcat_title">Duboki san</string>
@@ -59,11 +59,11 @@
     <!-- CATEGORY: MMC -->
     <string name="mmc_subcat_title">MMC</string>
     <string name="use_spi_crc_title_head">Isključi SPI CRC</string>
-    <string name="use_spi_crc_summary_head">Isklušivanjem SPI CRC se mogu unaprijediti mmc performanse (10% - 30%) ali mobitel se može iznenada zalediti</string>
+    <string name="use_spi_crc_summary_head">Isklučivanjem SPI CRC se mogu unaprijediti mmc performanse (10% - 30%) ali mobitel se može iznenada zalediti</string>
 
     <!-- CATEGORY: STORAGE -->
     <string name="storage_subcat_title">Pohranjivanje</string>
     <string name="switch_storage_title_head">Zamjeni memoriju</string>
-    <string name="switch_storage_summary_head">Zamjenjuje unutarnju sa vanjskom memorijom. Potrebno resetirati!.</string>
+    <string name="switch_storage_summary_head">Zamjenjuje unutarnju sa vanjskom memorijom. Potrebno resetirati!</string>
     
 </resources>

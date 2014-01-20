@@ -16,9 +16,9 @@
         <item>Dinamični Fsync</item>
     </string-array>
     <string-array name="cc_currency_usb_entries">
-        <item>800 mAh *WARNING*</item>
-        <item>600 mAh (Brzo punjenje)</item>
-        <item>400 mAh</item>
+        <item>800 mA *WARNING*</item>
+        <item>600 mA (Brzo punjenje)</item>
+        <item>400 mA</item>
     </string-array>
     <string-array name="deepest_sleep_states_entries">
         <item>Stanje 5</item>
@@ -26,9 +26,9 @@
         <item>Stanje 3 (Zadano)</item>
     </string-array>
     <string-array name="cc_currency_charger_entries">
-        <item>800 mAh   *UPOZORENJE*</item>
-        <item>600 mAh (Zadano)</item>
-        <item>400 mAh</item>
+        <item>800 mA   *UPOZORENJE*</item>
+        <item>600 mA (Zadano)</item>
+        <item>400 mA</item>
     </string-array>
     <string-array name="hspa_entries">
         <item>Samo UMTS</item>
