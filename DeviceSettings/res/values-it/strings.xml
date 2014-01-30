@@ -12,17 +12,17 @@
     <string name="calibrate_accelerometer_summary_head">Posizionare il telefono su una superficie orizzontale piana e premere per effettuare la calibrazione</string>
     <string name="accelerometer_dialog_head">Calibrazione effettuata</string>
     <string name="accelerometer_dialog_message">Il sensore è stato correttamente calibrato.</string>
-    <string name="deepest_sleep_title_head">Profondissimo Deep Sleep</string>
-    <string name="deepest_sleep_summary_head">Specifica il più alto livello di deep sleep</string>
+    <string name="deepest_sleep_title_head">Stato Deep Sleep</string>
+    <string name="deepest_sleep_summary_head">Specifica lo stato di deep sleep</string>
     <string name="category_screen_title">Schermo</string>
     <string name="otg_subcat_title">Impostazioni USB OTG</string>
     <string name="otg_power_title_head">Attivazione USB-OTG</string>
     <string name="otg_power_summary_head">Abilita alimentazione (in uscita) della porta USB</string>
     <string name="cc_subcat_title">Controllo Caricabatterie</string>
     <string name="ac_cc_title_head">Intensità Caricabatterie</string>
-    <string name="ac_cc_summary_head">Intensità caricabatterie in mAh, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
+    <string name="ac_cc_summary_head">Intensità caricabatterie in mA, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
     <string name="usb_cc_title_head">Intensità Caricabatterie USB</string>
-    <string name="usb_cc_summary_head">Intensità carica USB in mAh, utile per implementare la ricarica veloce, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
+    <string name="usb_cc_summary_head">Intensità carica USB in mA, utile per implementare la ricarica veloce, bassi livelli proteggono la batteria ma è richiesto maggior tempo per la ricarica, alte frequenze potrebbero danneggiare la durata della batteria</string>
 
     <!-- CATEGORY: Radio mode -->
     <string name="radio_subcat_title">Modalità Rete</string>
@@ -52,5 +52,10 @@
     <string name="mmc_subcat_title">Scheda SD</string>
     <string name="use_spi_crc_title_head">Disabilita SPI CRC</string>
     <string name="use_spi_crc_summary_head">Disabilitando lo SPI CRC, possono migliorare le performance della Scheda SD (10% - 30%) ma il telefono potrebbe freezare in modo casuale</string>
+
+<!-- CATEGORY: STORAGE -->
+    <string name="storage_subcat_title">Memoria</string>
+    <string name="switch_storage_title_head">Scambia partizioni</string>
+    <string name="switch_storage_summary_head">Scambia la partizione dell'archivio interno con la tua scheda microSD. Riavvio richiesto.</string>
 
 </resources>
