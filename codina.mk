@@ -2,6 +2,9 @@
 $(call inherit-product, device/samsung/u8500-common/common.mk)
 LOCAL_PATH := device/samsung/codina
 
+# Include codina blobs
+$(call inherit-product, vendor/samsung/u8500-common/codina/codina-vendor-blobs.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
