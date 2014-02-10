@@ -40,9 +40,6 @@
 # AT USB device - used by ATC
 /dev/ttyGS0               0060   root       radio
 
-# for GPS
-/dev/ttyAMA1              0664   radio      system
- 
 #permission for dun
 /dev/dun                  0660   system     system
 
